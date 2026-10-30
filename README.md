@@ -29,11 +29,11 @@ Open http://127.0.0.1:4173. Alternatively, serve `dist/` with any static web ser
 
 Add confirmed titles to `window.DUNKSTONE_GAMES` in `dist/games.js`. Supported fields are `title`, `status`, `description`, `artwork`, optional `platforms` (a string array), `appStoreUrl`, and `playStoreUrl`. Artwork paths are relative to the website root. Store links are rendered only for valid HTTPS URLs; omit them until listings are live. Status and platforms remain visible without store links. Missing status defaults to “In development”; missing platforms are omitted.
 
-The renderer reuses the existing HTML feature by title, updates catalogue fields, and preserves its artwork caption and gameplay highlights. Keep the Cargo Ahoy data and HTML fallback in sync. An empty catalogue leaves the HTML introduction intact. Future titles without artwork show text rather than borrowing the studio icon.
+The renderer reuses the existing HTML feature by title, updates catalogue fields, and preserves its gameplay highlights. Keep the Cargo Ahoy data and HTML fallback in sync. An empty catalogue leaves the HTML introduction intact. Future titles without artwork show text rather than borrowing the studio icon.
 
 ## Asset provenance and handling
 
-All v2 assets were copied byte-for-byte from these read-only sibling repositories; only Website is edited:
+The original v2 assets below were copied byte-for-byte from these read-only sibling repositories; only Website is edited:
 
 | Website asset (`dist/assets/`) | Approved source |
 | --- | --- |
@@ -46,7 +46,9 @@ All v2 assets were copied byte-for-byte from these read-only sibling repositorie
 | `dunkstone-splash-static.png` | `Branding/splash-animation/dunkstone-splash-dark-static.png` |
 | `cargo-ahoy.png` | `CargoAhoy/ArtSource/References/UI/app-icon.png` (approved October 28, 2026) |
 
-Cargo Ahoy copy is grounded in its `docs/GDD.md`. Studio attribution follows the owner’s instruction; the game repository README retains an older studio name. The game image is approved icon artwork, not a gameplay screenshot.
+Cargo Ahoy copy is grounded in its `docs/GDD.md`. Studio attribution follows the owner’s instruction; the game repository README retains an older studio name. The original square icon remains in `cargo-ahoy.png` for reference. The website displays `cargo-ahoy-feature.png`, a transparent ship-and-cargo illustration derived with the built-in image-generation tool from that icon and the owner-approved integrated-artwork mockup. Its organic wave edges blend directly into the off-white section; it is promotional artwork, not a gameplay screenshot. Neither reference repository was modified.
+
+Artwork brief: preserve the three crates, sloop, sail, colors, and game illustration style; remove the blue burst and square frame; use true transparent alpha with soft wave edges and no text or additional objects. The generated PNG is stored inside Website and both the HTML fallback and catalogue reference it.
 
 Use black `#000000` and off-white `#F4F3ED`. Preserve logo proportions, lettering, stone tilt, eyes, and clear space of at least 10% of the artwork’s longest edge. Use the small stone at 32–48 px and the faithful stone at 64 px and above. Never use the studio stone as a game icon. Do not ship the original reference raster or modify the approved motion files. No press-kit download is included.
 

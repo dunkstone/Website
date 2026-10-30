@@ -63,9 +63,10 @@ h2 { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size:
 .games-heading > p { font-size: 14px; line-height: 1.7; margin: 0 0 4px; color: #55554f; }
 .game-entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: clamp(28px, 5vw, 80px); padding: 40px 0; border-block: 1px solid #c9c9c1; }
 .game-entry + .game-entry { border-top: 0; }
-.game-artwork { margin: 0; }
-.game-artwork img, .catalogue-artwork { width: 100%; aspect-ratio: 1; object-fit: contain; }
-.game-artwork figcaption { margin-top: 14px; font-size: 9px; letter-spacing: 1.2px; color: #55554f; }
+/* Freestanding artwork blends into the paper; no app-icon frame or crop. */
+.game-artwork { margin: 0 -16px; }
+.game-artwork img { width: 100%; height: auto; }
+.catalogue-artwork { width: 100%; aspect-ratio: 1; object-fit: contain; }
 .game-details .eyebrow { font-size: 10px; letter-spacing: 1.2px; color: #55554f; margin-bottom: 16px; }
 .game-details h3 { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(36px, 4.4vw, 64px); letter-spacing: -.06em; line-height: 1.05; margin: 0 0 20px; }
 .game-description { color: #45453f; font-size: 16px; line-height: 1.75; margin: 0; max-width: 490px; }
@@ -155,7 +156,7 @@ h2 { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; font-size:
   .games-heading h2 { font-size: clamp(46px, 11vw, 70px); }
   .games-heading > p { margin-top: 23px; font-size: 14px; }
   .game-entry { grid-template-columns: 1fr; gap: 30px; padding: 28px 0; }
-  .game-artwork { max-width: 480px; }
+  .game-artwork { max-width: 504px; margin: 0 -12px; }
   .game-details h3 { font-size: clamp(40px, 10vw, 60px); }
   .game-details .eyebrow { font-size: 9px; }
   .game-description { font-size: 15px; }
