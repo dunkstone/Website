@@ -1,82 +1,64 @@
-# Dunkstone website
+# Dunkstone website v2
 
-The official website for **Dunkstone**, an independent mobile game studio founded by two business partners. The studio is developing games for iOS and Android, with future releases planned for the App Store and Google Play.
-
-The first version introduces the studio, features its animated logo, and presents upcoming games as in development. It uses a monochrome palette inspired by the supplied Dunkstone branding.
+The official single-page website for Dunkstone, a two-founder independent mobile game studio. V2 adopts the approved Drop In branding and introduces **Cargo Ahoy**, our first upcoming game.
 
 ## Website contents
 
-- Responsive home page with the headline “Small studio. Big play.”
-- Games section ready for future titles, artwork, release status, and store links.
-- Introduction to the two-founder studio.
-- Three-second, muted logo reveal with a static fallback and reduced-motion support.
-- Keyboard navigation, visible focus indicators, and a skip-to-content link.
-- Search and social sharing metadata, favicon, and sharing image.
+- Responsive monochrome homepage with “Small studio. Big play.”
+- Approved SVG studio logos, size-appropriate stone icons, and updated sharing artwork.
+- Three-second, silent splash with WebM/MP4 sources, a settled-frame fallback, and reduced-motion support.
+- Cargo Ahoy feature with approved game artwork, the one-tap stacking pitch, gameplay highlights, development status, and iOS-first / Android-later plans.
+- Studio introduction, keyboard navigation, visible focus, and skip-to-content link.
+- Complete Cargo Ahoy introduction available without JavaScript.
 
-No build step, backend, accounts, database, or third-party runtime libraries are required.
-
-## Repository structure
-
-```text
-.openai/hosting.json    Existing Sites project and static hosting configuration
- dist/                 Complete website; publish this directory
-   index.html          Page structure, copy, and metadata
-   styles.css          Responsive styling and brand colours
-   games.js            Game catalogue data
-   app.js              Logo playback and game catalogue rendering
-   assets/
-     dunkstone-logo.jpg    Original supplied logo
-     dunkstone-reveal.mp4  Original supplied animated logo reveal
-     favicon.png          Icon derived from the logo
-     social.jpg           Social sharing artwork derived from the logo
-```
+No build step, backend, dependencies, or third-party runtime libraries are required.
 
 ## Preview locally
 
-With Node.js installed, run from the repository root:
+From this repository, with Python installed:
 
 ```sh
-npx --yes http-server dist -p 4173 -c-1
+python -m http.server 4173 --bind 127.0.0.1 --directory dist
 ```
 
-Open http://localhost:4173 in your browser. The first run downloads the preview server from npm. The website itself has no package installation or build requirements.
-
-Alternatively, serve `dist/` with any static web server.
+Open http://127.0.0.1:4173. Alternatively, serve `dist/` with any static web server.
 
 ## Update the website
 
-Edit `dist/index.html` for studio copy and metadata, and `dist/styles.css` for layout and styling.
+`dist/index.html` contains page structure, metadata, and the accessible Cargo Ahoy feature. `dist/styles.css` controls presentation; `dist/app.js` handles splash playback and catalogue enhancement.
 
-Add confirmed games to `window.DUNKSTONE_GAMES` in `dist/games.js`. Each game supports `title`, `status`, `description`, `artwork`, `appStoreUrl`, and `playStoreUrl`. Artwork paths are relative to the website root. Omit store links until their listings are live; store URLs must use HTTPS. With an empty catalogue, the page displays the “Our first titles” in-development message.
+Add confirmed titles to `window.DUNKSTONE_GAMES` in `dist/games.js`. Supported fields are `title`, `status`, `description`, `artwork`, optional `platforms` (a string array), `appStoreUrl`, and `playStoreUrl`. Artwork paths are relative to the website root. Store links are rendered only for valid HTTPS URLs; omit them until listings are live. Status and platforms remain visible without store links. Missing status defaults to “In development”; missing platforms are omitted.
 
-Keep the supplied logo artwork intact. Contact details, social profiles, release dates, and game download buttons should be added only when confirmed.
+The renderer reuses the existing HTML feature by title, updates catalogue fields, and preserves its artwork caption and gameplay highlights. Keep the Cargo Ahoy data and HTML fallback in sync. An empty catalogue leaves the HTML introduction intact. Future titles without artwork show text rather than borrowing the studio icon.
 
-## Brand palette
+## Asset provenance and handling
 
-| Colour | Hex | Use |
-| --- | --- | --- |
-| Near-black | `#050505` | Main background |
-| Charcoal | `#191919` | Secondary surfaces |
-| Stone grey | `#969690` | Accents and secondary details |
-| Warm white | `#F5F4EE` | Main text and light section background |
+All v2 assets were copied byte-for-byte from these read-only sibling repositories; only Website is edited:
 
-## Hosting and domain
+| Website asset (`dist/assets/`) | Approved source |
+| --- | --- |
+| `dunkstone-logo.svg` | `Branding/logo/vector/full-logo/dunkstone-logo-off-white.svg` |
+| `dunkstone-stone.svg` | `Branding/logo/vector/stone/dunkstone-icon-off-white.svg` |
+| `dunkstone-stone-small.svg` | `Branding/logo/vector/stone-small/dunkstone-tiny-off-white.svg` |
+| `favicon.png` | `Branding/logo/png/stone/dunkstone-stone-32-off-white.png` |
+| `social.png` | `Branding/press-kit/images/dunkstone-sharing-card-1200x630.png` |
+| `dunkstone-splash.mp4`, `dunkstone-splash.webm` | `Branding/splash-animation/dunkstone-splash-dark.mp4`, `.webm` |
+| `dunkstone-splash-static.png` | `Branding/splash-animation/dunkstone-splash-dark-static.png` |
+| `cargo-ahoy.png` | `CargoAhoy/ArtSource/References/UI/app-icon.png` (approved October 28, 2026) |
 
-The current preview is published privately through Sites:
+Cargo Ahoy copy is grounded in its `docs/GDD.md`. Studio attribution follows the owner’s instruction; the game repository README retains an older studio name. The game image is approved icon artwork, not a gameplay screenshot.
 
-https://dunkstone-studio.danielntp94.chatgpt.site
+Use black `#000000` and off-white `#F4F3ED`. Preserve logo proportions, lettering, stone tilt, eyes, and clear space of at least 10% of the artwork’s longest edge. Use the small stone at 32–48 px and the faithful stone at 64 px and above. Never use the studio stone as a game icon. Do not ship the original reference raster or modify the approved motion files. No press-kit download is included.
 
-Access is restricted to the owner's account and requires sign-in. The `.openai/hosting.json` file preserves the existing Sites project identity and sets `dist` as the static website directory. Publishing updates uses the Sites workflow; copying files into this repository does not deploy them automatically.
+## Hosting
 
-The purchased **dunkstone.com** domain has not been connected. Connect it when the studio is ready for a public launch, and update the absolute social metadata URLs in `dist/index.html` at that time.
+`.openai/hosting.json` retains the existing Sites project identity and serves `dist`. This v2 update is local only: no deployment, domain changes, commits, or pushes. Existing absolute social URLs still target the private preview at https://dunkstone-studio.danielntp94.chatgpt.site/. Update them when a public domain is connected; `dunkstone.com` has not been configured here.
 
 ## Validation
-
-The initial website was checked at desktop, tablet, and phone sizes, including navigation, image loading, keyboard focus, and logo playback. Reduced-motion and playback-rejection fallbacks were also checked.
-
-After changes, verify the affected layouts and links in a browser. JavaScript syntax can be checked with:
 
 ```sh
 node --check dist/app.js
 node --check dist/games.js
 ```
+
+Check desktop, tablet, and phone widths down to 320 px, asset loading, keyboard navigation, and the Cargo Ahoy feature with JavaScript disabled. Check completed playback, blocked autoplay, missing video, and reduced motion: the settled still must remain visible. Verify status and platform text without store links, no duplicate game feature, and no horizontal overflow.

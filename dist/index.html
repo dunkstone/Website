@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050505">
+  <meta name="theme-color" content="#000000">
   <title>Dunkstone — Small studio. Big play.</title>
-  <meta name="description" content="Meet Dunkstone, a two-founder mobile game studio. Our first games are in development for iOS and Android. This is just the beginning.">
+  <meta name="description" content="Meet Dunkstone, a two-founder mobile game studio. Discover Cargo Ahoy, our first upcoming game: one-tap cargo stacking on the high seas.">
   <meta property="og:title" content="Dunkstone — Small studio. Big play.">
-  <meta property="og:description" content="Two founders. A new mobile game studio. This is just the beginning.">
+  <meta property="og:description" content="Small studio. Big play. Meet Cargo Ahoy, our first upcoming game.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dunkstone-studio.danielntp94.chatgpt.site/">
-  <meta property="og:image" content="https://dunkstone-studio.danielntp94.chatgpt.site/assets/social.jpg">
+  <meta property="og:image" content="https://dunkstone-studio.danielntp94.chatgpt.site/assets/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dunkstone stacked logo on an off-white background">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
@@ -20,7 +23,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="header shell">
-    <a class="brand" href="#" aria-label="Dunkstone home"><img src="assets/dunkstone-logo.jpg" alt="Dunkstone" width="1600" height="901"></a>
+    <a class="brand" href="#" aria-label="Dunkstone home"><img src="assets/dunkstone-stone-small.svg" alt="Dunkstone" width="48" height="48"></a>
     <nav aria-label="Main navigation"><a href="#games">Games <span aria-hidden="true">↗</span></a><a href="#studio">Our studio <span aria-hidden="true">↗</span></a></nav>
     <span class="header-note">INDEPENDENT GAME STUDIO</span>
   </header>
@@ -30,14 +33,19 @@
         <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> A NEW STUDIO. A NEW CHAPTER.</p>
         <h1 id="hero-title">Small studio.<br>Big <span class="play-word">play<span class="period">.</span><svg viewBox="0 0 300 22" aria-hidden="true"><path d="M4 15 Q140 -4 294 10"/></svg></span></h1>
         <p class="hero-description">We’re Dunkstone. Two founders creating games for the small screen, with plenty of room for big ideas.</p>
-        <a class="button" href="#games">See what’s in play <span aria-hidden="true">↓</span></a>
+        <a class="button" href="#cargo-ahoy">Meet Cargo Ahoy <span aria-hidden="true">↓</span></a>
       </div>
       <div class="hero-art">
         <div class="art-top"><span>THE FIRST MOVE</span><span>001 / DUNKSTONE</span></div>
         <div class="logo-stage">
-          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
-          <div class="logo-media"><img class="hero-logo" src="assets/dunkstone-logo.jpg" alt="Dunkstone studio logo" width="1600" height="901"><video id="logo-reveal" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="assets/dunkstone-reveal.mp4" type="video/mp4"></video></div>
-          <span class="art-cross cross-one" aria-hidden="true">+</span><span class="art-cross cross-two" aria-hidden="true">+</span>
+          <div class="logo-media">
+            <img class="hero-logo" src="assets/dunkstone-logo.svg" alt="Dunkstone studio logo" width="512" height="288">
+            <img class="splash-still" src="assets/dunkstone-splash-static.png" alt="" width="1920" height="1080" aria-hidden="true">
+            <video id="logo-reveal" muted playsinline preload="none" poster="assets/dunkstone-splash-static.png" aria-hidden="true" tabindex="-1">
+              <source src="assets/dunkstone-splash.webm" type="video/webm">
+              <source src="assets/dunkstone-splash.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
         <div class="art-bottom"><span>BUILT TO PLAY.</span><span class="little-arrow" aria-hidden="true">↘</span></div>
       </div>
@@ -46,17 +54,35 @@
     <section id="games" class="games-section" aria-labelledby="games-title">
       <div class="shell">
         <div class="section-label"><span>01 / OUR GAMES</span><span class="mini-mark" aria-hidden="true">↙</span></div>
-        <div class="games-heading"><h2 id="games-title">Good things<br>are in play.</h2><p>Every game starts somewhere.<br>Ours are taking shape right now.</p></div>
-        <div id="game-list"><article class="game-entry"><div class="game-symbol" aria-hidden="true"><div class="stone"><i></i><i></i></div></div><div class="game-details"><p class="eyebrow">ON THE HORIZON</p><h3>Our first titles</h3><p>In development. More to come.</p></div><div class="game-platforms"><span class="development"><span class="status-dot" aria-hidden="true"></span> IN DEVELOPMENT</span><p>For iOS &amp; Android</p></div></article></div>
-        <div class="games-foot"><p>A little patience. A lot to look forward to.</p><span>APP STORE &amp; GOOGLE PLAY</span></div>
+        <div class="games-heading"><h2 id="games-title">Good things<br>are in play.</h2><p>Our first game is taking shape.<br>A little cargo. A lot of nerve.</p></div>
+        <div id="game-list">
+          <article id="cargo-ahoy" class="game-entry" aria-labelledby="cargo-ahoy-title">
+            <figure class="game-artwork">
+              <img src="assets/cargo-ahoy.png" alt="Cargo Ahoy game artwork: three colorful cargo crates stacked on a small sloop at sea" width="1024" height="1024" loading="lazy">
+              <figcaption>CARGO AHOY / GAME ARTWORK</figcaption>
+            </figure>
+            <div class="game-details">
+              <p class="eyebrow">DUNKSTONE’S FIRST UPCOMING GAME</p>
+              <h3 id="cargo-ahoy-title">Cargo Ahoy</h3>
+              <p class="game-description">Stack pirate cargo on your ship as high as you dare. Keep your tower balanced as the sea gets rougher, and turn perfect drops into better loot.</p>
+              <div class="game-platforms"><span class="development"><span class="status-dot" aria-hidden="true"></span> In development</span><p>Planned for iOS first, Android later</p></div>
+              <ul class="game-highlights">
+                <li><span class="feature-number" aria-hidden="true">01</span><div><h4>One tap. One more crate.</h4><p>Time your drop and keep the cargo balanced.</p></div></li>
+                <li><span class="feature-number" aria-hidden="true">02</span><div><h4>Higher stacks. Rougher seas.</h4><p>Face swells, wind, and storms as your tower grows.</p></div></li>
+                <li><span class="feature-number" aria-hidden="true">03</span><div><h4>Perfect drops. Better loot.</h4><p>Upgrade your cargo, from rickety crates to gold chests.</p></div></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="games-foot"><p>In the making. On the horizon.</p><span>OUR FIRST VOYAGE STARTS HERE</span></div>
       </div>
     </section>
     <section id="studio" class="studio-section shell" aria-labelledby="studio-title">
       <div class="section-label"><span>02 / OUR STUDIO</span><span class="mini-mark" aria-hidden="true">↙</span></div>
-      <div class="studio-grid"><div class="studio-title"><h2 id="studio-title">Two minds.<br>One <span>next move.</span></h2><div class="founder-marks" aria-hidden="true"><div class="stone"><i></i><i></i></div><span>+</span><div class="stone second-stone"><i></i><i></i></div></div></div><div class="studio-copy"><p class="large-copy">Dunkstone starts with two partners and a shared ambition: to make games worth making time for.</p><p>We’re an independent game development studio building for iOS and Android. Our first titles are in development, and this is where you’ll find what comes next.</p><p class="studio-signoff">Small team. Open possibilities.<span aria-hidden="true">↗</span></p></div></div>
+      <div class="studio-grid"><div class="studio-title"><h2 id="studio-title">Two minds.<br>One <span>next move.</span></h2><div class="founder-marks" aria-hidden="true"><img src="assets/dunkstone-stone.svg" alt="" width="64" height="64"><span>+</span><img src="assets/dunkstone-stone.svg" alt="" width="64" height="64"></div></div><div class="studio-copy"><p class="large-copy">Dunkstone starts with two partners and a shared ambition: to make games worth making time for.</p><p>We’re an independent game development studio building for iOS and Android. Cargo Ahoy is our first upcoming game, and this is where you’ll find what comes next.</p><p class="studio-signoff">Small team. Open possibilities.<span aria-hidden="true">↗</span></p></div></div>
     </section>
     <section class="closing" aria-label="Studio motto"><div class="shell"><p>THIS IS JUST THE BEGINNING.</p><div>Let’s play<span aria-hidden="true">↗</span></div></div></section>
   </main>
-  <footer class="footer shell"><a href="#" class="footer-brand" aria-label="Dunkstone home">DUNKSTONE</a><p>© <span id="year">2026</span> Dunkstone</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <footer class="footer shell"><a href="#" class="footer-brand" aria-label="Dunkstone home"><img src="assets/dunkstone-stone-small.svg" alt="" width="32" height="32"><span>Dunkstone</span></a><p>© <span id="year">2026</span> Dunkstone</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
